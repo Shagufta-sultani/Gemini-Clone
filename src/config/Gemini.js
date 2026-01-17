@@ -15,7 +15,7 @@ async function runChat(prompt) {
 
     const generationConfig = {
         temperature: 0.9,
-        topX: 1,
+        topK: 1,
         topP: 1,
         maxOutputTokens: 2048,
     };
@@ -50,6 +50,8 @@ async function runChat(prompt) {
     const result = await chat.sendMessage(prompt);
     const response = result.response;
     console.log(response.text());
+    return response.text();
     
 }
  export default runChat;
+
